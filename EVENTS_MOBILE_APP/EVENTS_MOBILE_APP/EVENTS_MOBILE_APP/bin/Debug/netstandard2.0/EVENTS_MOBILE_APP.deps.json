@@ -10,7 +10,8 @@
       "EVENTS_MOBILE_APP/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.1",
-          "reactiveui": "7.4.0"
+          "reactiveui": "7.4.0",
+          "reactiveui-core": "7.4.0"
         },
         "runtime": {
           "EVENTS_MOBILE_APP.dll": {}

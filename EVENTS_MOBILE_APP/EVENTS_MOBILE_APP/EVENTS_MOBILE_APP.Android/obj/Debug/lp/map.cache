@@ -29,3 +29,8 @@ System.Reactive.Linq
 System.Reactive.PlatformServices
 ReactiveUI.AndroidSupport
 ReactiveUI.Events
+netstandard
+System.ComponentModel
+System.Resources.ResourceManager
+System.Diagnostics.Tools
+System.Runtime.InteropServices.WindowsRuntime
