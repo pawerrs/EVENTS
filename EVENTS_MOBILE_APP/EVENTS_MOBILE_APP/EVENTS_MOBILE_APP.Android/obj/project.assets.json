@@ -2,6 +2,117 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v8.1": {
+      "reactiveui/7.4.0": {
+        "type": "package",
+        "dependencies": {
+          "reactiveui-core": "[7.4.0]"
+        }
+      },
+      "reactiveui-androidsupport/7.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.v4": "22.1.1.1",
+          "Xamarin.Android.Support.v7.AppCompat": "22.1.1.1",
+          "Xamarin.Android.Support.v7.RecyclerView": "22.1.1.1",
+          "reactiveui-core": "[7.4.0]"
+        },
+        "compile": {
+          "lib/MonoAndroid403/ReactiveUI.AndroidSupport.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid403/ReactiveUI.AndroidSupport.dll": {}
+        }
+      },
+      "reactiveui-core/7.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Main": "2.2.5",
+          "Splat": "[1.4.0, 2.0.0)"
+        },
+        "compile": {
+          "lib/MonoAndroid403/ReactiveUI.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid403/ReactiveUI.dll": {}
+        }
+      },
+      "reactiveui-events/7.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Main": "2.2.5"
+        },
+        "compile": {
+          "lib/MonoAndroid403/ReactiveUI.Events.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid403/ReactiveUI.Events.dll": {}
+        }
+      },
+      "Rx-Core/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/portable-windows8+net45+wp8/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/portable-windows8+net45+wp8/System.Reactive.Core.dll": {}
+        }
+      },
+      "Rx-Interfaces/2.2.5": {
+        "type": "package",
+        "compile": {
+          "lib/portable-windows8+net45+wp8/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/portable-windows8+net45+wp8/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/portable-windows8+net45+wp8/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/portable-windows8+net45+wp8/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5",
+          "Rx-Linq": "2.2.5",
+          "Rx-PlatformServices": "2.2.5"
+        }
+      },
+      "Rx-PlatformServices/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/portable-windows8+net45+wp8/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/portable-windows8+net45+wp8/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Splat/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/monoandroid/Splat.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid/Splat.dll": {}
+        }
+      },
       "Xamarin.Android.Support.Animated.Vector.Drawable/25.4.0.2": {
         "type": "package",
         "dependencies": {
@@ -263,39 +374,12 @@
           "build/MonoAndroid70/Xamarin.Android.Support.Vector.Drawable.targets": {}
         }
       },
-      "Xamarin.Forms/2.5.0.280555": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Android.Support.Design": "25.4.0.2",
-          "Xamarin.Android.Support.v4": "25.4.0.2",
-          "Xamarin.Android.Support.v7.AppCompat": "25.4.0.2",
-          "Xamarin.Android.Support.v7.CardView": "25.4.0.2",
-          "Xamarin.Android.Support.v7.MediaRouter": "25.4.0.2"
-        },
-        "compile": {
-          "lib/MonoAndroid10/FormsViewGroup.dll": {},
-          "lib/MonoAndroid10/Xamarin.Forms.Core.dll": {},
-          "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll": {},
-          "lib/MonoAndroid10/Xamarin.Forms.Platform.dll": {},
-          "lib/MonoAndroid10/Xamarin.Forms.Xaml.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid10/FormsViewGroup.dll": {},
-          "lib/MonoAndroid10/Xamarin.Forms.Core.dll": {},
-          "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll": {},
-          "lib/MonoAndroid10/Xamarin.Forms.Platform.dll": {},
-          "lib/MonoAndroid10/Xamarin.Forms.Xaml.dll": {}
-        },
-        "build": {
-          "build/netstandard1.0/Xamarin.Forms.props": {},
-          "build/netstandard1.0/Xamarin.Forms.targets": {}
-        }
-      },
       "EVENTS_MOBILE_APP/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "2.5.0.280555"
+          "reactiveui": "7.4.0",
+          "reactiveui-core": "7.4.0"
         },
         "compile": {
           "bin/placeholder/EVENTS_MOBILE_APP.dll": {}
@@ -307,6 +391,298 @@
     }
   },
   "libraries": {
+    "reactiveui/7.4.0": {
+      "sha512": "ut/4fezqMH3mzkI/SUzmxnYLj8tDwi9NZ8RmLfaEwhmQ7OELBNhsVZqQrG+Hqc1yr1mfPoTW0vyIbQSicLHjuA==",
+      "type": "package",
+      "path": "reactiveui/7.4.0",
+      "files": [
+        "LICENSE",
+        "reactiveui.7.4.0.nupkg.sha512",
+        "reactiveui.nuspec"
+      ]
+    },
+    "reactiveui-androidsupport/7.4.0": {
+      "sha512": "8d5ynoE9pFfOGdO9LFe30Q7yiscMAtyS+rxrs8rgS4v9IA8e8QDrL4W0RvINf72PMMF1NqUdgbilYkWH/UxHdA==",
+      "type": "package",
+      "path": "reactiveui-androidsupport/7.4.0",
+      "files": [
+        "lib/MonoAndroid403/ReactiveUI.AndroidSupport.dll",
+        "lib/MonoAndroid403/ReactiveUI.AndroidSupport.dll.mdb",
+        "lib/MonoAndroid403/ReactiveUI.AndroidSupport.pdb",
+        "lib/MonoAndroid403/ReactiveUI.AndroidSupport.xml",
+        "reactiveui-androidsupport.7.4.0.nupkg.sha512",
+        "reactiveui-androidsupport.nuspec",
+        "src/ControlFetcherMixin.cs",
+        "src/ReactiveActionBarActivity.cs",
+        "src/ReactiveAppCompatActivity.cs",
+        "src/ReactiveDialogFragment.cs",
+        "src/ReactiveFragment.cs",
+        "src/ReactiveFragmentActivity.cs",
+        "src/ReactivePagerAdapter.cs",
+        "src/ReactiveRecyclerViewAdapter.cs"
+      ]
+    },
+    "reactiveui-core/7.4.0": {
+      "sha512": "BseZIvDK1MFYjBZ18mZvQJ5hhYz/yZ1U0cs7WG0VVvE37b6PEN9kSS6bPdg+K8N0JFj8AHespHtfup4cEOgyaw==",
+      "type": "package",
+      "path": "reactiveui-core/7.4.0",
+      "files": [
+        "lib/MonoAndroid403/ReactiveUI.dll",
+        "lib/MonoAndroid403/ReactiveUI.dll.mdb",
+        "lib/MonoAndroid403/ReactiveUI.pdb",
+        "lib/MonoAndroid403/ReactiveUI.xml",
+        "lib/Net45/ReactiveUI.dll",
+        "lib/Net45/ReactiveUI.pdb",
+        "lib/Net45/ReactiveUI.xml",
+        "lib/Portable-Win81+Wpa81/ReactiveUI.dll",
+        "lib/Portable-Win81+Wpa81/ReactiveUI.pdb",
+        "lib/Portable-Win81+Wpa81/ReactiveUI.xml",
+        "lib/UAP10/ReactiveUI.dll",
+        "lib/UAP10/ReactiveUI.pdb",
+        "lib/UAP10/ReactiveUI.xml",
+        "lib/Xamarin.Mac20/ReactiveUI.dll",
+        "lib/Xamarin.Mac20/ReactiveUI.pdb",
+        "lib/Xamarin.Mac20/ReactiveUI.xml",
+        "lib/Xamarin.iOS10/ReactiveUI.dll",
+        "lib/Xamarin.iOS10/ReactiveUI.pdb",
+        "lib/Xamarin.iOS10/ReactiveUI.xml",
+        "lib/portable-net45+netcore45+wpa81+win8+wp8+UAP10+MonoAndroid403+MonoTouch10+Xamarin.iOS10/ReactiveUI.dll",
+        "lib/portable-net45+netcore45+wpa81+win8+wp8+UAP10+MonoAndroid403+MonoTouch10+Xamarin.iOS10/ReactiveUI.pdb",
+        "lib/portable-net45+netcore45+wpa81+win8+wp8+UAP10+MonoAndroid403+MonoTouch10+Xamarin.iOS10/ReactiveUI.xml",
+        "reactiveui-core.7.4.0.nupkg.sha512",
+        "reactiveui-core.nuspec",
+        "src/Activation.cs",
+        "src/AutoPersistHelper.cs",
+        "src/BindingTypeConverters.cs",
+        "src/CollectionDebugView.cs",
+        "src/CommandBinding.cs",
+        "src/CompatMixins.cs",
+        "src/ConsoleStub.cs",
+        "src/ContractStubs.cs",
+        "src/CreatesCommandBinding.cs",
+        "src/DisposableMixins.cs",
+        "src/ExpressionMixins.cs",
+        "src/ExpressionRewriter.cs",
+        "src/IDependencyResolver.cs",
+        "src/INPCObservableForProperty.cs",
+        "src/IROObservableForProperty.cs",
+        "src/IReactiveObject.cs",
+        "src/Interactions.cs",
+        "src/Interfaces.cs",
+        "src/LoggingMixins.cs",
+        "src/MessageBus.cs",
+        "src/ObservableAsPropertyHelper.cs",
+        "src/Observables.cs",
+        "src/ObservedChangedMixin.cs",
+        "src/OrderedComparer.cs",
+        "src/POCOObservableForProperty.cs",
+        "src/PortableLibraryStubs.cs",
+        "src/PropertyBinding.cs",
+        "src/ReactiveBinding.cs",
+        "src/ReactiveCollectionMixins.cs",
+        "src/ReactiveCommand.cs",
+        "src/ReactiveList.cs",
+        "src/ReactiveNotifyPropertyChangedMixin.cs",
+        "src/ReactiveObject.cs",
+        "src/RefcountDisposeWrapper.cs",
+        "src/Reflection.cs",
+        "src/RegisterableInterfaces.cs",
+        "src/Registrations.cs",
+        "src/RoutableViewModelMixin.cs",
+        "src/RoutingState.cs",
+        "src/RxApp.cs",
+        "src/ScheduledSubject.cs",
+        "src/SuspensionHost.cs",
+        "src/UnhandledErrorException.cs",
+        "src/VariadicTemplates.cs",
+        "src/ViewAttributes.cs",
+        "src/ViewLocator.cs",
+        "src/WaitForDispatcherScheduler.cs",
+        "src/WeakEventManager.cs"
+      ]
+    },
+    "reactiveui-events/7.4.0": {
+      "sha512": "j8Ufnqr+YS61MOGBFfMTDJ80wk1AE1IjFboJyS8IRvTXpE5MFMeWJBU8uojvLLB4OM5JTKjJftRM5/s+Aub7tw==",
+      "type": "package",
+      "path": "reactiveui-events/7.4.0",
+      "files": [
+        "lib/MonoAndroid403/ReactiveUI.Events.dll",
+        "lib/MonoAndroid403/ReactiveUI.Events.pdb",
+        "lib/MonoAndroid403/ReactiveUI.Events.xml",
+        "lib/Net45/ReactiveUI.Events.dll",
+        "lib/Net45/ReactiveUI.Events.pdb",
+        "lib/Net45/ReactiveUI.Events.xml",
+        "lib/UAP10/ReactiveUI.Events.dll",
+        "lib/UAP10/ReactiveUI.Events.pdb",
+        "lib/UAP10/ReactiveUI.Events.xml",
+        "lib/WPA81/ReactiveUI.Events.dll",
+        "lib/WPA81/ReactiveUI.Events.pdb",
+        "lib/WPA81/ReactiveUI.Events.xml",
+        "lib/Xamarin.iOS10/ReactiveUI.Events.dll",
+        "lib/Xamarin.iOS10/ReactiveUI.Events.pdb",
+        "lib/Xamarin.iOS10/ReactiveUI.Events.xml",
+        "reactiveui-events.7.4.0.nupkg.sha512",
+        "reactiveui-events.nuspec",
+        "src/Events_ANDROID.cs",
+        "src/Events_IOS.cs",
+        "src/Events_MAC.cs",
+        "src/Events_NET45.cs",
+        "src/Events_UWP.cs",
+        "src/Events_WPA81.cs",
+        "src/Events_XAMFORMS.cs",
+        "src/SingleAwaitSubject.cs"
+      ]
+    },
+    "Rx-Core/2.2.5": {
+      "sha512": "DfWVTfW6tvRkkqpnRHKxPIvaRZyDJGADuqrE6J2nwejOQbLRWi0rNUwXkViDWz++25BGDy3iRE5OE6Dv8mJxYQ==",
+      "type": "package",
+      "path": "rx-core/2.2.5",
+      "files": [
+        "lib/net40/System.Reactive.Core.XML",
+        "lib/net40/System.Reactive.Core.dll",
+        "lib/net45/System.Reactive.Core.XML",
+        "lib/net45/System.Reactive.Core.dll",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Core.XML",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Core.dll",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.Core.XML",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.Core.dll",
+        "lib/portable-win81+wpa81/System.Reactive.Core.XML",
+        "lib/portable-win81+wpa81/System.Reactive.Core.dll",
+        "lib/portable-windows8+net45+wp8/System.Reactive.Core.XML",
+        "lib/portable-windows8+net45+wp8/System.Reactive.Core.dll",
+        "lib/sl5/System.Reactive.Core.XML",
+        "lib/sl5/System.Reactive.Core.dll",
+        "lib/windows8/System.Reactive.Core.XML",
+        "lib/windows8/System.Reactive.Core.dll",
+        "lib/windowsphone71/System.Reactive.Core.XML",
+        "lib/windowsphone71/System.Reactive.Core.dll",
+        "lib/windowsphone8/System.Reactive.Core.XML",
+        "lib/windowsphone8/System.Reactive.Core.dll",
+        "rx-core.2.2.5.nupkg.sha512",
+        "rx-core.nuspec"
+      ]
+    },
+    "Rx-Interfaces/2.2.5": {
+      "sha512": "FKtG2QfMIeUcfB7r3a89VoAiszX3DTvYETkpC6U0FzWpxRK/mcHyzYOsniDfag+NsDG0P1k1c8yNSefXKp3t2A==",
+      "type": "package",
+      "path": "rx-interfaces/2.2.5",
+      "files": [
+        "lib/net40/System.Reactive.Interfaces.XML",
+        "lib/net40/System.Reactive.Interfaces.dll",
+        "lib/net45/System.Reactive.Interfaces.XML",
+        "lib/net45/System.Reactive.Interfaces.dll",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Interfaces.XML",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Interfaces.dll",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.Interfaces.XML",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.Interfaces.dll",
+        "lib/portable-win81+wpa81/System.Reactive.Interfaces.XML",
+        "lib/portable-win81+wpa81/System.Reactive.Interfaces.dll",
+        "lib/portable-windows8+net45+wp8/System.Reactive.Interfaces.XML",
+        "lib/portable-windows8+net45+wp8/System.Reactive.Interfaces.dll",
+        "lib/sl5/System.Reactive.Interfaces.XML",
+        "lib/sl5/System.Reactive.Interfaces.dll",
+        "lib/windows8/System.Reactive.Interfaces.XML",
+        "lib/windows8/System.Reactive.Interfaces.dll",
+        "lib/windowsphone71/System.Reactive.Interfaces.XML",
+        "lib/windowsphone71/System.Reactive.Interfaces.dll",
+        "lib/windowsphone8/System.Reactive.Interfaces.XML",
+        "lib/windowsphone8/System.Reactive.Interfaces.dll",
+        "rx-interfaces.2.2.5.nupkg.sha512",
+        "rx-interfaces.nuspec"
+      ]
+    },
+    "Rx-Linq/2.2.5": {
+      "sha512": "UTeCIu3cWPExxmTzdiVq7SalqTBhUaomBTaAC9LpYPoAopjlFwA3hjVWXoLkGlDc/44wqJemJuEwFP00KphiFg==",
+      "type": "package",
+      "path": "rx-linq/2.2.5",
+      "files": [
+        "lib/net40/System.Reactive.Linq.XML",
+        "lib/net40/System.Reactive.Linq.dll",
+        "lib/net45/System.Reactive.Linq.XML",
+        "lib/net45/System.Reactive.Linq.dll",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Linq.XML",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Linq.dll",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.Linq.XML",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.Linq.dll",
+        "lib/portable-win81+wpa81/System.Reactive.Linq.XML",
+        "lib/portable-win81+wpa81/System.Reactive.Linq.dll",
+        "lib/portable-windows8+net45+wp8/System.Reactive.Linq.XML",
+        "lib/portable-windows8+net45+wp8/System.Reactive.Linq.dll",
+        "lib/sl5/System.Reactive.Linq.XML",
+        "lib/sl5/System.Reactive.Linq.dll",
+        "lib/windows8/System.Reactive.Linq.XML",
+        "lib/windows8/System.Reactive.Linq.dll",
+        "lib/windowsphone71/System.Reactive.Linq.XML",
+        "lib/windowsphone71/System.Reactive.Linq.dll",
+        "lib/windowsphone8/System.Reactive.Linq.XML",
+        "lib/windowsphone8/System.Reactive.Linq.dll",
+        "rx-linq.2.2.5.nupkg.sha512",
+        "rx-linq.nuspec"
+      ]
+    },
+    "Rx-Main/2.2.5": {
+      "sha512": "qdQ6qENEiLsp/LRdzZlLlodihWN8VDjwNfWa8c2ELjEHZgTdKzt1V4i61gkHVtFKZXe8Px6KupbMP3pZ+1tusQ==",
+      "type": "package",
+      "path": "rx-main/2.2.5",
+      "files": [
+        "rx-main.2.2.5.nupkg.sha512",
+        "rx-main.nuspec"
+      ]
+    },
+    "Rx-PlatformServices/2.2.5": {
+      "sha512": "pMnNEvJVjT+wuDib+W/bi5hhIYcre7dW5yxvKrJxnR4iKJ1VLA/dY2FTtjDriHGx7OeGn12lQewXlH2oHiWFPA==",
+      "type": "package",
+      "path": "rx-platformservices/2.2.5",
+      "files": [
+        "lib/net40/System.Reactive.PlatformServices.XML",
+        "lib/net40/System.Reactive.PlatformServices.dll",
+        "lib/net45/System.Reactive.PlatformServices.XML",
+        "lib/net45/System.Reactive.PlatformServices.dll",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.PlatformServices.XML",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.PlatformServices.dll",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.PlatformServices.XML",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.PlatformServices.dll",
+        "lib/portable-win81+wpa81/System.Reactive.PlatformServices.XML",
+        "lib/portable-win81+wpa81/System.Reactive.PlatformServices.dll",
+        "lib/portable-windows8+net45+wp8/System.Reactive.PlatformServices.XML",
+        "lib/portable-windows8+net45+wp8/System.Reactive.PlatformServices.dll",
+        "lib/sl5/System.Reactive.PlatformServices.XML",
+        "lib/sl5/System.Reactive.PlatformServices.dll",
+        "lib/windows8/System.Reactive.PlatformServices.XML",
+        "lib/windows8/System.Reactive.PlatformServices.dll",
+        "lib/windowsphone71/System.Reactive.PlatformServices.XML",
+        "lib/windowsphone71/System.Reactive.PlatformServices.dll",
+        "lib/windowsphone8/System.Reactive.PlatformServices.XML",
+        "lib/windowsphone8/System.Reactive.PlatformServices.dll",
+        "rx-platformservices.2.2.5.nupkg.sha512",
+        "rx-platformservices.nuspec"
+      ]
+    },
+    "Splat/1.4.0": {
+      "sha512": "F2crrxugiQOigrFIhLkgsCsar3k9ZCBYKd845qnskj51A6EsTQdlE8OQ0uakpm+HThYp/sKnvJ6HdotGPeo6hg==",
+      "type": "package",
+      "path": "splat/1.4.0",
+      "files": [
+        "lib/MonoMac/Splat.dll",
+        "lib/MonoMac/Splat.dll.mdb",
+        "lib/Net45/Splat.dll",
+        "lib/Net45/Splat.pdb",
+        "lib/NetCore45/Splat.dll",
+        "lib/NetCore45/Splat.pdb",
+        "lib/NetCore45/Splat.pri",
+        "lib/Portable-Win81+Wpa81/Splat.dll",
+        "lib/Portable-Win81+Wpa81/Splat.pri",
+        "lib/Portable-net45+win+wpa81+wp80/Splat.dll",
+        "lib/monoandroid/Splat.dll",
+        "lib/monoandroid/Splat.dll.mdb",
+        "lib/monotouch/Splat.dll",
+        "lib/monotouch/Splat.dll.mdb",
+        "lib/wp8/Splat.dll",
+        "lib/wp8/Splat.pdb",
+        "splat.1.4.0.nupkg.sha512",
+        "splat.nuspec"
+      ]
+    },
     "Xamarin.Android.Support.Animated.Vector.Drawable/25.4.0.2": {
       "sha512": "SaSUvYnc6ntGD/Rvo8O+Ks1yS5hgMFUPfPIEsBC337weZzyIeInKQJHt2myxCEER/5UutmBPlptlbn9Yki21RA==",
       "type": "package",
@@ -503,188 +879,6 @@
         "xamarin.android.support.vector.drawable.nuspec"
       ]
     },
-    "Xamarin.Forms/2.5.0.280555": {
-      "sha512": "JVmozDJQNKEVhN4NG5EiG2IBua0+xK9b+t1L/VUN9HeIXkc8BubZM6UnnE1CftlGt0U2+JGTQSL79uxpx0KCpQ==",
-      "type": "package",
-      "path": "xamarin.forms/2.5.0.280555",
-      "files": [
-        "build/netstandard1.0/Mono.Cecil.Mdb.dll",
-        "build/netstandard1.0/Mono.Cecil.Pdb.dll",
-        "build/netstandard1.0/Mono.Cecil.Rocks.dll",
-        "build/netstandard1.0/Mono.Cecil.dll",
-        "build/netstandard1.0/Xamarin.Forms.Build.Tasks.dll",
-        "build/netstandard1.0/Xamarin.Forms.Core.dll",
-        "build/netstandard1.0/Xamarin.Forms.DefaultItems.props",
-        "build/netstandard1.0/Xamarin.Forms.DefaultItems.targets",
-        "build/netstandard1.0/Xamarin.Forms.Xaml.dll",
-        "build/netstandard1.0/Xamarin.Forms.props",
-        "build/netstandard1.0/Xamarin.Forms.targets",
-        "build/portable-win+net45+wp80+win81+wpa81/Mono.Cecil.Mdb.dll",
-        "build/portable-win+net45+wp80+win81+wpa81/Mono.Cecil.Pdb.dll",
-        "build/portable-win+net45+wp80+win81+wpa81/Mono.Cecil.Rocks.dll",
-        "build/portable-win+net45+wp80+win81+wpa81/Mono.Cecil.dll",
-        "build/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Build.Tasks.dll",
-        "build/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Core.dll",
-        "build/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.DefaultItems.targets",
-        "build/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Xaml.dll",
-        "build/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.targets",
-        "lib/MonoAndroid10/Design/Xamarin.Forms.Core.Design.dll",
-        "lib/MonoAndroid10/Design/Xamarin.Forms.Xaml.Design.dll",
-        "lib/MonoAndroid10/FormsViewGroup.dll",
-        "lib/MonoAndroid10/FormsViewGroup.pdb",
-        "lib/MonoAndroid10/Xamarin.Forms.Core.dll",
-        "lib/MonoAndroid10/Xamarin.Forms.Core.pdb",
-        "lib/MonoAndroid10/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll",
-        "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.pdb",
-        "lib/MonoAndroid10/Xamarin.Forms.Platform.dll",
-        "lib/MonoAndroid10/Xamarin.Forms.Xaml.dll",
-        "lib/MonoAndroid10/Xamarin.Forms.Xaml.pdb",
-        "lib/MonoAndroid10/Xamarin.Forms.Xaml.xml",
-        "lib/WP80/Design/Xamarin.Forms.Core.Design.dll",
-        "lib/WP80/Design/Xamarin.Forms.Xaml.Design.dll",
-        "lib/WP80/Xamarin.Forms.Core.dll",
-        "lib/WP80/Xamarin.Forms.Core.pdb",
-        "lib/WP80/Xamarin.Forms.Core.xml",
-        "lib/WP80/Xamarin.Forms.Platform.WP8.dll",
-        "lib/WP80/Xamarin.Forms.Platform.dll",
-        "lib/WP80/Xamarin.Forms.Xaml.dll",
-        "lib/WP80/Xamarin.Forms.Xaml.pdb",
-        "lib/WP80/Xamarin.Forms.Xaml.xml",
-        "lib/Xamarin.Mac/Xamarin.Forms.Core.dll",
-        "lib/Xamarin.Mac/Xamarin.Forms.Platform.dll",
-        "lib/Xamarin.Mac/Xamarin.Forms.Platform.macOS.dll",
-        "lib/Xamarin.Mac/Xamarin.Forms.Xaml.dll",
-        "lib/Xamarin.iOS10/Design/Xamarin.Forms.Core.Design.dll",
-        "lib/Xamarin.iOS10/Design/Xamarin.Forms.Xaml.Design.dll",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll.mdb",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Core.pdb",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Core.xml",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.pdb",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll.mdb",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.pdb",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.xml",
-        "lib/Xamarin.iOS10/ar/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/ca/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/cs/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/da/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/de/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/el/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/es/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/fi/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/fr/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/he/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/hi/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/hr/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/hu/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/id/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/it/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/ja/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/ko/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/ms/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/nb/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/nl/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/pl/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/pt/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/ro/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/ru/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/sk/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/sv/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/th/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/tr/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/uk/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/vi/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/zh-HK/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/zh-Hans/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/netstandard1.0/Design/Xamarin.Forms.Core.Design.dll",
-        "lib/netstandard1.0/Design/Xamarin.Forms.Xaml.Design.dll",
-        "lib/netstandard1.0/Xamarin.Forms.Core.dll",
-        "lib/netstandard1.0/Xamarin.Forms.Core.dll.mdb",
-        "lib/netstandard1.0/Xamarin.Forms.Core.pdb",
-        "lib/netstandard1.0/Xamarin.Forms.Core.xml",
-        "lib/netstandard1.0/Xamarin.Forms.Platform.dll",
-        "lib/netstandard1.0/Xamarin.Forms.Xaml.dll",
-        "lib/netstandard1.0/Xamarin.Forms.Xaml.dll.mdb",
-        "lib/netstandard1.0/Xamarin.Forms.Xaml.pdb",
-        "lib/netstandard1.0/Xamarin.Forms.Xaml.xml",
-        "lib/portable-win+net45+wp80+win81+wpa81/Design/Xamarin.Forms.Core.Design.dll",
-        "lib/portable-win+net45+wp80+win81+wpa81/Design/Xamarin.Forms.Xaml.Design.dll",
-        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Core.dll",
-        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Core.dll.mdb",
-        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Core.pdb",
-        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Core.xml",
-        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Platform.dll",
-        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Xaml.dll",
-        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Xaml.dll.mdb",
-        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Xaml.pdb",
-        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Xaml.xml",
-        "lib/uap10.0/Design/Xamarin.Forms.Core.Design.dll",
-        "lib/uap10.0/Design/Xamarin.Forms.Xaml.Design.dll",
-        "lib/uap10.0/Xamarin.Forms.Core.dll",
-        "lib/uap10.0/Xamarin.Forms.Core.xml",
-        "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll",
-        "lib/uap10.0/Xamarin.Forms.Platform.UAP.pri",
-        "lib/uap10.0/Xamarin.Forms.Platform.UAP/AutoSuggestStyle.xbf",
-        "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsCommandBarStyle.xbf",
-        "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsEmbeddedPageWrapper.xbf",
-        "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsProgressBarStyle.xbf",
-        "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsTextBoxStyle.xbf",
-        "lib/uap10.0/Xamarin.Forms.Platform.UAP/MasterDetailControlStyle.xbf",
-        "lib/uap10.0/Xamarin.Forms.Platform.UAP/PageControlStyle.xbf",
-        "lib/uap10.0/Xamarin.Forms.Platform.UAP/Properties/Xamarin.Forms.Platform.UAP.rd.xml",
-        "lib/uap10.0/Xamarin.Forms.Platform.UAP/Resources.xbf",
-        "lib/uap10.0/Xamarin.Forms.Platform.UAP/TabbedPageStyle.xbf",
-        "lib/uap10.0/Xamarin.Forms.Platform.UAP/Xamarin.Forms.Platform.UAP.xr.xml",
-        "lib/uap10.0/Xamarin.Forms.Platform.dll",
-        "lib/uap10.0/Xamarin.Forms.Xaml.dll",
-        "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "lib/win81/Design/Xamarin.Forms.Core.Design.dll",
-        "lib/win81/Design/Xamarin.Forms.Xaml.Design.dll",
-        "lib/win81/Xamarin.Forms.Core.dll",
-        "lib/win81/Xamarin.Forms.Core.xml",
-        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet.dll",
-        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet.pri",
-        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet/FormsProgressBarStyle.xbf",
-        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet/FormsTextBoxStyle.xbf",
-        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet/Resources.xbf",
-        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet/TabletResources.xbf",
-        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet/Xamarin.Forms.Platform.WinRT.Tablet.xr.xml",
-        "lib/win81/Xamarin.Forms.Platform.WinRT.dll",
-        "lib/win81/Xamarin.Forms.Platform.WinRT.pri",
-        "lib/win81/Xamarin.Forms.Platform.WinRT/StepperControl.xbf",
-        "lib/win81/Xamarin.Forms.Platform.WinRT/Xamarin.Forms.Platform.WinRT.xr.xml",
-        "lib/win81/Xamarin.Forms.Platform.dll",
-        "lib/win81/Xamarin.Forms.Xaml.dll",
-        "lib/win81/Xamarin.Forms.Xaml.xml",
-        "lib/wpa81/Design/Xamarin.Forms.Core.Design.dll",
-        "lib/wpa81/Design/Xamarin.Forms.Xaml.Design.dll",
-        "lib/wpa81/Xamarin.Forms.Core.dll",
-        "lib/wpa81/Xamarin.Forms.Core.xml",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone.dll",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone.pri",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone/FormsProgressBarStyle.xbf",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone/FormsTextBoxStyle.xbf",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone/PhoneResources.xbf",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone/Resources.xbf",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone/SearchBox.xbf",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone/Xamarin.Forms.Platform.WinRT.Phone.xr.xml",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.dll",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.pri",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT/StepperControl.xbf",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT/Xamarin.Forms.Platform.WinRT.xr.xml",
-        "lib/wpa81/Xamarin.Forms.Platform.dll",
-        "lib/wpa81/Xamarin.Forms.Xaml.dll",
-        "lib/wpa81/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.2.5.0.280555.nupkg.sha512",
-        "xamarin.forms.nuspec"
-      ]
-    },
     "EVENTS_MOBILE_APP/1.0.0": {
       "type": "project",
       "path": "../EVENTS_MOBILE_APP/EVENTS_MOBILE_APP.csproj",
@@ -699,7 +893,9 @@
       "Xamarin.Android.Support.v7.AppCompat >= 25.4.0.2",
       "Xamarin.Android.Support.v7.CardView >= 25.4.0.2",
       "Xamarin.Android.Support.v7.MediaRouter >= 25.4.0.2",
-      "Xamarin.Forms >= 2.5.0.280555"
+      "reactiveui >= 7.4.0",
+      "reactiveui-androidsupport >= 7.4.0",
+      "reactiveui-events >= 7.4.0"
     ]
   },
   "packageFolders": {
@@ -759,9 +955,17 @@
             "target": "Package",
             "version": "[25.4.0.2, )"
           },
-          "Xamarin.Forms": {
+          "reactiveui": {
             "target": "Package",
-            "version": "[2.5.0.280555, )"
+            "version": "[7.4.0, )"
+          },
+          "reactiveui-androidsupport": {
+            "target": "Package",
+            "version": "[7.4.0, )"
+          },
+          "reactiveui-events": {
+            "target": "Package",
+            "version": "[7.4.0, )"
           }
         }
       }
